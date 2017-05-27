@@ -1,4 +1,29 @@
-﻿using System;
+﻿#region Copyright (c) 2017 G. Gagnaux, https://github.com/ggagnaux/SkylineProblemVisualizer
+/*
+SkylineProblemVisualizer - An application to visualize the skyline algorithm problem
+
+Copyright (c) 2017 G. Gagnaux, https://github.com/ggagnaux/SkylineProblemVisualizer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in the 
+Software without restriction, including without limitation the rights to use, copy, 
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the 
+following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+#endregion
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +38,8 @@ namespace SkylineProblemVisualizer
 {
     public partial class LogViewer : FormBase
     {
-        // Use the ListView instead of a TextBox
+        // true = Use ListView for display (Doesn't work correctly)
+        // false = Use TextBox for display
         private readonly bool UseListView = false;
 
         public LogViewer(Form parent, IFormController _controller) : base(_controller)
@@ -47,10 +73,9 @@ namespace SkylineProblemVisualizer
 
         private MetroListView CreateListView(Panel container)
         {
-            container = null;
             if (container == null)
             {
-                string msg = "container cannot be null.";
+                string msg = "Container for ListView cannot be null.";
                 LogHelper.LogError(msg);
                 throw new ArgumentNullException(msg);
             }
@@ -82,7 +107,6 @@ namespace SkylineProblemVisualizer
             }
 
             MetroTextBox tb = new MetroTextBox();
-
             tb.CustomButton.Image = null;
             tb.CustomButton.Location = new System.Drawing.Point(413, 1);
             tb.CustomButton.Name = "";
