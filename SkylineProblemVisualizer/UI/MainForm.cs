@@ -106,7 +106,7 @@ namespace SkylineProblemVisualizer
             CanvasManager = new ChartCanvasManager(panelCanvas.Width, panelCanvas.Height);
 
             // Ensure that the primary canvas doesn't flicker when refreshed
-            panelCanvas.SetDoubleBuffered();
+            //panelCanvas.SetDoubleBuffered();
 
             // Setup keyboard handler
             InitializeKeyboardHandlers();

@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KohdAndArt.Toolkit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\KohdAndArt.Toolkit\KohdAndArt.Toolkit\bin\Debug\KohdAndArt.Toolkit.dll</HintPath>
+    <Reference Include="KohdAndArt.Toolkit">
+      <HintPath>..\..\Kohd-Art-Toolkit\KohdAndArt.Toolkit\bin\Release\KohdAndArt.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -180,6 +179,10 @@
   <ItemGroup>
     <None Include="Resources\SkylineProblemVisualizerLogo.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="skyline_data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
